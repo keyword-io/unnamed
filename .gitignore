@@ -1,0 +1,15 @@
+# system
+.DS_Store
+.idea
+.history
+.vscode
+.fleet
+.turbo
+
+# dependencies
+node_modules
+
+# libs
+lib
+dist
+

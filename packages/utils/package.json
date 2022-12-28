@@ -1,0 +1,24 @@
+{
+  "name": "@unnamed/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b .",
+    "typings": "tsc --emitDeclarationOnly",
+    "test": "jest",
+    "lint": "eslint src --ext .ts --quiet",
+    "prepublish": "npm run build && npm run typings"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "typescript": "^4.9.4"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=3"
+  }
+}

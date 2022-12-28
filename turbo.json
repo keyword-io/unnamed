@@ -1,0 +1,23 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "prepublish": {
+      "dependsOn": [
+        "^prepublish"
+      ],
+      "outputs": [
+        "lib/**"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build",
+        "typings"
+      ],
+      "outputs": [
+        "lib/**"
+      ]
+    },
+    "check-types": {}
+  }
+}

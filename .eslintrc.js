@@ -1,6 +1,4 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  root: true,
   parser: '@typescript-eslint/parser',
   env: {
     browser: true,
@@ -15,4 +13,45 @@ module.exports = {
     createDefaultProgram: true,
   },
   plugins: ['@typescript-eslint', 'import'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+  ],
+  rules: {
+    'import/no-extraneous-dependencies': ['error'],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+    ],
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    'no-constant-condition': 'off',
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: false,
+      },
+    ],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'require-atomic-updates': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'require-await': 'error',
+    '@typescript-eslint/prefer-regexp-exec': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/ban-types': 'warn',
+    '@typescript-eslint/restrict-plus-operands': 'warn',
+    '@typescript-eslint/unbound-method': 'warn',
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
+    '@typescript-eslint/no-this-alias': 'warn',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+  },
 };

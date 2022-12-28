@@ -20,7 +20,10 @@
     "url": "git+https://github.com/make-a-big-deal/unnamed.git"
   },
   "scripts": {
-    "test": "node ./__tests__/i18n.test.js"
+    "build": "tsc -b .",
+    "typings": "tsc --emitDeclarationOnly",
+    "test": "jest",
+    "prepublish": "npm run build && npm run typings"
   },
   "bugs": {
     "url": "https://github.com/make-a-big-deal/unnamed/issues"

@@ -1,0 +1,28 @@
+{
+  "name": "i18n",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Junjia Huang <junjia.huang@smartx.com>",
+  "homepage": "https://github.com/make-a-big-deal/unnamed#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "src/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/make-a-big-deal/unnamed.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/i18n.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/make-a-big-deal/unnamed/issues"
+  }
+}

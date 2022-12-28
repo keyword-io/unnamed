@@ -39,6 +39,7 @@
     },
     "peerDependencyRules": {
       "ignoreMissing": [
+        "@babel/core",
         "@babel/plugin-syntax-flow",
         "@testing-library/dom",
         "@babel/plugin-transform-react-jsx",

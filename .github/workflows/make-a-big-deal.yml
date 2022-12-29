@@ -64,4 +64,4 @@ jobs:
         run: pnpm turbo run test
         
       - name: Run ui test
-        run: pnpm run test --filter=@unnamed/ui
+        run: pnpm --filter=@unnamed/ui run test

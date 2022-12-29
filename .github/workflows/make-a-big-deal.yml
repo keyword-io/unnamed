@@ -4,12 +4,19 @@
 name: Make a big deal CI
 
 on:
-  - push
-  - pull_request
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   cache-and-install:
+    name: Build and Test
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
     steps:
       - name: Checkout

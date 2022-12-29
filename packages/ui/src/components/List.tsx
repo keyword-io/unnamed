@@ -18,7 +18,7 @@ const List: React.FC<{
           key={item.id}
           className={cx(
             'list-item',
-            activeId === item.id && ListItemActiveStyle,
+            activeId === item.id && '__active',
             activeId === item.id && ListItemActiveStyle,
           )}
           onClick={() => setActiveId(item.id)}

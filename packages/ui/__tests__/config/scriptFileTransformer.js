@@ -1,9 +1,10 @@
 const babelJest = require('babel-jest');
+const path = require('path');
 
 module.exports = {
   process(src, filename, config, options) {
     const babelConfig = {
-      configFile: './__tests__/config/babel.config.js',
+      configFile: path.resolve(__dirname, 'babel.config.js'),
     };
     const babelProcess = babelJest.createTransformer(babelConfig).process;
     return babelProcess(src, filename, config, options);

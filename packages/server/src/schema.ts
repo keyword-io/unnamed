@@ -208,14 +208,16 @@ const User = objectType({
     t.nonNull.int('id');
     t.string('name');
     t.nonNull.string('email');
-    t.nonNull.list.nonNull.field('posts', {
+    t.nonNull.list.field('posts', {
       type: 'Post',
-      resolve: (parent, _, context: Context) => {
-        return context.prisma.user
+      resolve: async (parent, _, context: Context) => {
+        const postList = await context.prisma.user
           .findUnique({
             where: { id: parent.id || undefined },
           })
           .posts();
+
+        return postList || [];
       },
     });
   },

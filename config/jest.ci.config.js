@@ -9,7 +9,7 @@ module.exports = {
     'ts-jest': {
       isolatedModules: true,
       diagnostics: false,
-      tsConfig: path.resolve(__dirname, './tsconfig.test.json'),
+      tsconfig: path.resolve(__dirname, './tsconfig.test.json'),
     },
   },
 
@@ -22,7 +22,6 @@ module.exports = {
   projects: [
     '<rootDir>/packages/utils',
     '<rootDir>/packages/i18n',
-    '<rootDir>/packages/ui',
   ],
 
   collectCoverage: true,

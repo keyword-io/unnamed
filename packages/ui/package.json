@@ -24,9 +24,10 @@
     "start": "craco start",
     "build": "craco build",
     "test": "jest --config jest.config.js",
+    "test:coverage": "jest --config jest.config.js --coverage",
     "eject": "craco eject",
     "lint": "eslint src --ext .ts,.tsx --quiet",
-    "generate": "graphql-codegen --config config/codegen/graphql-codegen.config.ts"
+    "generate": "graphql-codegen --config config/graphql-codegen.config.ts"
   },
   "engines": {
     "node": ">=16",

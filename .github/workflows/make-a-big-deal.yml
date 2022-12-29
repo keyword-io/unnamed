@@ -50,18 +50,18 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        
+
       - name: Turbo run prepublish
         run: pnpm turbo run prepublish
-        
+
       - name: Turbo run check types
         run: pnpm turbo run check-types
-        
+
       - name: Turbo run lint
         run: pnpm turbo run lint
-        
-      - name: Turbo run test
-        run: pnpm turbo run test
-        
+
+      - name: Run basic test
+        run: pnpm run test:coverage
+
       - name: Run ui test
-        run: pnpm --filter=@unnamed/ui run test
+        run: pnpm --filter=@unnamed/ui run test:coverage

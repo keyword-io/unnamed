@@ -51,7 +51,7 @@ type User {
   email: String!
   id: Int!
   name: String
-  posts: [Post!]!
+  posts: [Post]!
 }
 
 input UserCreateInput {

@@ -8,6 +8,7 @@
     "lerna": "lerna",
     "turbo": "turbo",
     "test": "jest --config config/jest.ci.config.js",
+    "test:coverage": "jest --config config/jest.ci.config.js --coverage",
     "prepare": "husky install"
   },
   "keywords": [],

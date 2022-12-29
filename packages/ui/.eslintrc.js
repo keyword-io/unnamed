@@ -27,8 +27,6 @@ module.exports = {
     '*.js',
     '*.d.ts',
     '**/generated/**/*',
-    '*.stories.tsx',
     '*.spec.tsx',
-    'src/__tests__/apollo-mocked-provider/',
   ],
 };

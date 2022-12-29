@@ -1,12 +1,15 @@
+const path = require("path");
+
 module.exports = {
   transform: {
-    '.ts': 'ts-jest',
-  },
-
-  globals: {
-    'ts-jest': {
-      diagnostics: false,
-    },
+    '.ts': [
+      'ts-jest',
+      {
+        isolatedModules: true,
+        diagnostics: false,
+        tsconfig: path.resolve(__dirname, './tsconfig.test.json'),
+      }
+    ],
   },
 
   moduleFileExtensions: ['ts', 'js'],
@@ -16,7 +19,5 @@ module.exports = {
 
   testEnvironment: "node",
   maxWorkers: "50%",
-  collectCoverage: Boolean(process.env.COVERAGE),
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coveragePathIgnorePatterns: ['generated']
 };

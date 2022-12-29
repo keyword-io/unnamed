@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15.1
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: make-a-big-deal
+      POSTGRES_PASSWORD: make-a-big-deal
+    volumes:
+      - make-a-big-deal-postgres:/var/lib/postgresql/data
+volumes:
+  make-a-big-deal-postgres: ~

@@ -1,30 +1,44 @@
-const path = require('path');
-const fs = require('fs');
-const CracoAntDesignPlugin = require('craco-antd');
-const CracoLinariaPlugin = require('craco-linaria');
+const CracoAntDesignPlugin = require("craco-antd");
+const CracoLinariaPlugin = require("craco-linaria");
+const CracoEnvPlugin = require("craco-plugin-env");
+const dotenv = require('dotenv');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const GLOBAL_SASS_VARIABLES_PATH = path.resolve(__dirname,
-  'src/styles/common/variables.scss',
-);
-
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = process.env.NODE_ENV === 'production';
+dotenv.config();
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   plugins: [
+    { plugin: CracoEnvPlugin },
     { plugin: CracoAntDesignPlugin },
     {
       plugin: CracoLinariaPlugin,
       options: {
         displayName: isDev,
-        preprocessor: 'none',
-        source: isDev,
+        preprocessor: "none",
+        source: isDev
       }
     },
   ],
   devServer: {
     open: false,
-  },
+    proxy: {
+      "/api": {
+        target: `http://${process.env.APOLLO_SERVER_HOST}/`,
+        changeOrigin: true,
+        ws: true,
+        pathRewrite: {
+          "^/api": "/api"
+        },
+        onError: err => {
+          console.log("Suppressing WDS proxy upgrade error:", err);
+        },
+        onProxyReqWs: (proxyReq, req, socket, options, head) => {
+          socket.on("error", function(err) {
+            console.warn("Socket error using onProxyReqWs event", err);
+          });
+        },
+        secure: false
+      }
+    }
+  }
 };

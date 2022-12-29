@@ -1,0 +1,13 @@
+{
+    "extends": "../../config/tsconfig.base.json",
+    "compilerOptions": {
+        "target": "es6",
+        "outDir": "lib",
+        "lib": ["es6", "ESNext.AsyncIterable"],
+        "composite": true,
+        "rootDir": "src",
+        "preserveSymlinks": true
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["__tests__/**/*.ts"]
+}

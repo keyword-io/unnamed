@@ -54,6 +54,14 @@ npm install -g pnpm
   ```shell
   pnpm turbo <scrpt>
   ```
+  
+- turbo remote cache
+
+  详细请自行了解 [Turbo remote cache](https://turbo.build/repo/docs/core-concepts/remote-caching)
+
+  ```shell
+  turbo run <script> --team="team_awesome" --token="turbotoken" --api="https://your-caching.server.dev"
+  ```
 
 具体其他命令请查看相关文档
 

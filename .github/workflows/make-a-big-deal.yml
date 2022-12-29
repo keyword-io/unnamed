@@ -62,3 +62,6 @@ jobs:
         
       - name: Turbo run test
         run: pnpm turbo run test
+        
+      - name: Run ui test
+        run: pnpm --filter=@unnamed/ui run test

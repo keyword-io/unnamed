@@ -51,5 +51,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
         
-      - name: Turbo run
-        run: pnpm turbo run prepublish check-types lint test
+      - name: Turbo run prepublish
+        run: pnpm turbo run prepublish
+        
+      - name: Turbo run check types
+        run: pnpm turbo run check-types
+        
+      - name: Turbo run lint
+        run: pnpm turbo run lint
+        
+      - name: Turbo run test
+        run: pnpm turbo run test

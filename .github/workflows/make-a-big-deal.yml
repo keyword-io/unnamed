@@ -4,8 +4,10 @@
 name: Make a big deal CI
 
 on:
-  - push
-  - pull_request
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   cache-and-install:

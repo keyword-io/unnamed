@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loads and displays greeting 1`] = `
+<div>
+  <main>
+    <ul
+      class="l12x9kn6"
+    >
+      <li
+        class="list-item lbeoyx2"
+      >
+        item-1
+      </li>
+      <li
+        class="list-item lbeoyx2"
+      >
+        item-2
+      </li>
+    </ul>
+  </main>
+</div>
+`;

@@ -9,10 +9,20 @@ const GLOBAL_SASS_VARIABLES_PATH = path.resolve(__dirname,
   'src/styles/common/variables.scss',
 );
 
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
   plugins: [
     { plugin: CracoAntDesignPlugin },
-    { plugin: CracoLinariaPlugin },
+    {
+      plugin: CracoLinariaPlugin,
+      options: {
+        displayName: isDev,
+        preprocessor: 'none',
+        source: isDev,
+      }
+    },
   ],
   devServer: {
     open: false,

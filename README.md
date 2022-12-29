@@ -43,6 +43,18 @@ npm install -g pnpm
   pnpm --filter=<workspace_package_name> run <script>
   ```
 
+- test
+  
+  ```shell
+  pnpm turbo test
+  ```
+
+- turbo
+
+  ```shell
+  pnpm turbo <scrpt>
+  ```
+
 具体其他命令请查看相关文档
 
 - [pnpm](https://pnpm.io)

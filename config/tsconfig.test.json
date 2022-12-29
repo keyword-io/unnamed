@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "lib",
+    "lib": ["es6"],
+    "isolatedModules": true
+  }
+}
